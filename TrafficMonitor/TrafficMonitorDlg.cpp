@@ -1250,7 +1250,7 @@ UINT CTrafficMonitorDlg::MonitorThreadCallback(LPVOID dwUser)
             CString info;
             info.LoadString(IDS_CONNECTION_NOT_MATCH);
             info.Replace(_T("<%cnt%>"), CCommon::IntToString(pThis->m_restart_cnt));
-            CCommon::WriteLog(info, theApp.m_log_path.c_str());
+            // CCommon::WriteLog(info, theApp.m_log_path.c_str());
         }
     }
 
