@@ -58,7 +58,7 @@ void CTrafficMonitorApp::LoadConfig()
         is_chinese_language = CCommon::LoadText(IDS_LANGUAGE_CODE) == _T("2");
     else
         is_chinese_language = (m_general_data.language == Language::SIMPLIFIED_CHINESE);
-    m_general_data.update_source = ini.GetInt(L"general", L"update_source", is_chinese_language ? 1 : 0);   //如果当前语言为简体，则默认更新源为Gitee，否则为GitHub
+    m_general_data.update_source = ini.GetInt(L"general", L"update_source", is_chinese_language ? 0 : 0);   //如果当前语言为简体，则默认更新源为Gitee，否则为GitHub
     //载入获取CPU利用率的方式，默认使用GetSystemTimes获取
     m_general_data.m_get_cpu_usage_by_cpu_times = ini.GetBool(L"general", L"get_cpu_usage_by_cpu_times", /*m_win_version.GetMajorVersion() < 10*/ true);
     m_general_data.monitor_time_span = ini.GetInt(L"general", L"monitor_time_span", 1000);
